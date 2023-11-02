@@ -21,6 +21,10 @@ connection.on('error', ()=>{
     console.log("MongoDB database connection error");
 })
 
+const exercisesRouter = require('./routes/exercises');
+const usersRouter = require('./routes/users');
+app.use('/exercises', exercisesRouter)
+app.use('/users', usersRouter)
 
 app.listen(port, () => {
 console. log(`Server is running on port: ${port}`);
